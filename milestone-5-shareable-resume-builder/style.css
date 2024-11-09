@@ -127,6 +127,10 @@ button:hover {
     height: 150px;
 }
 
+.hidden {
+    display: none;
+}
+
 #buttonsContainer {
     display: flex;
     justify-content: center;
