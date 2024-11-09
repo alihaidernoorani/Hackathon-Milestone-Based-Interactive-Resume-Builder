@@ -1,106 +1,127 @@
+/* Reset body margins and apply a background */
 body {
     margin: 0;
-}
-
-#container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
     display: flex;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-#formSection {
-    flex: 1;
-    float: left;
-    flex-direction: column;
-    gap: 20px;
-    max-width: 50%;
-}
-
-#resumeSection {
-    flex: 1;
-    float: right;
-    max-width: 50%;
-    margin-top: auto;
+    justify-content: center;
+    align-items: center;
 }
 
 h1 {
     color: #007bff;
-}
-
-fieldset {
-    border: 2px solid #333;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-    width: 100%;
-    box-sizing: border-box;
-    background-color: #fff;
-}
-
-legend {
-    font-weight: bold;
-    padding: 0 10px;
-    font-size: 1.2em;
-    color: #333;
-}
-
-input, select, textarea {
-    padding: 5px;
-    margin:10px 0;
-    width: 100%;
-}
-
-#remote, #work {
-    max-width: fit-content;
-}
-
-button {
-    width:150px;
-    height:25px;
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #d8dee6;
-}
-
-#resumeSection {
-    width: 600px;
-    height: 707px;
-    padding: 20px;
-    margin: 50px;
-    background-color: #ffffff; 
-    color: #333333; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    border: 2px solid #e5e5e5;
-}
-
-h1 {
-    color: #007bff; 
     text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 30px;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    width: 100%;
+}
+
+form {
+    font-family: 'Arial', sans-serif;
+    width: 60%; 
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); 
 }
 
 h2 {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 35px;
     border-bottom: 2px solid #007bff;
-    padding: 2px;
-    margin-bottom: 20px;
+    padding-bottom: 5px;
+    text-align: center;
 }
 
-#personalInformationHeading,
-#educationHeading,
-#experienceHeading,
-#skillsHeading {
-    display: none;
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 12px; 
+    color: #333;
 }
 
-p {
-    line-height: 1.5;
+input[type="file"] {
+    margin-bottom: 45px;
+}
+
+input[type="text"],
+input[type="url"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 45px;
+    box-sizing: border-box;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="url"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+select:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#resumeSection {
+    font-family: 'Arial', sans-serif;
+    width: 60%; 
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); 
+}
+
+#resumeSection h2 {
+    font-size: 1.5em;
+    color: #007bff;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
 }
 
 #profilePic {
     display: block;
-    margin: 0 auto;
+    margin: 0 auto 20px;
     border-radius: 50%;
     width: 150px;
     height: 150px;
