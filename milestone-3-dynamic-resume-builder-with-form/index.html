@@ -8,13 +8,13 @@
 </head>
 <body>
     <div id="container">
-        <!-- Forms Section -->
+        <!-- Centered Form Section -->
         <section id="formSection">
             <h1>Dynamic Resume Builder</h1>
-            <!-- Personal Information Form -->
-            <form id="personalInfoForm">
-                <fieldset>
-                    <legend>Personal Information</legend>
+            <!-- Unified Resume Form -->
+            <form id="resumeForm">
+                <!-- Personal Information -->
+                    <h2>PERSONAL INFORMATION</h2>
                     <label for="profilePicture">Profile Picture</label>
                     <input type="file" id="profilePicture" accept="image/*" required>
                     <label for="firstName">First Name</label>
@@ -29,19 +29,16 @@
                     <input type="number" id="tel" required>
                     <label for="email">Email</label>
                     <input type="email" id="email" required>
-                    <button type="submit">Update Resume</button>
-                </fieldset>
-            </form>
-            <!-- Education Form -->
-            <form id="educationInfoForm">
-                <fieldset>
-                    <legend>Education</legend>
+
+
+                <!-- Education -->
+                    <h2>EDUCATION</h2>
                     <label for="school">School Name</label>
                     <input type="text" id="school" required>
                     <label for="schoolLocation">School Location</label>
                     <input type="text" id="schoolLocation" required>
                     <label for="degree">Degree</label>
-                    <select>
+                    <select id="degree">
                         <option>High School Diploma</option>
                         <option>GED</option>
                         <option>Associate of Arts</option>
@@ -64,13 +61,10 @@
                     <input type="text" id="study" required>
                     <label for="grad">Graduation Date (Or Expected Graduation Date)</label>
                     <input type="date" id="grad" required>
-                    <button type="submit">Update Resume</button>
-                </fieldset>
-            </form>
-            <!-- Experience Form -->
-            <form id="experienceInfoForm">
-                <fieldset>
-                    <legend>Experience</legend>
+
+
+                <!-- Experience -->
+                    <h2>EXPERIENCE</h2>
                     <label for="jobTitle">Job Title</label>
                     <input type="text" id="jobTitle" required>
                     <label for="employer">Employer</label>
@@ -89,41 +83,22 @@
                         <input type="checkbox" id="work">
                         I currently work here
                     </label>
-                    <button type="submit">Update Resume</button>
-                </fieldset>
-            </form>
-            <!-- Skills Form -->
-            <form id="skillsInfoForm">
-                <fieldset>
-                    <legend>Skills</legend>
+
+
+                <!-- Skills -->
+                    <h2>SKILLS</h2>
                     <label for="skill">Skills</label>
                     <input type="text" id="skill">
-                    <button type="submit">Update Resume</button>
-                </fieldset>
+
+
+                <!-- Submit Button -->
+                <button type="submit">Generate Resume</button>
             </form>
         </section>
+        
         <!-- Resume Section -->
         <section id="resumeSection">
-            <div id="profileContainer">
-                <div id="profilePic"></div>
-                <h2 id="personalInformationHeading">Personal Information</h2>
-                <p id="personalInformation"></p>
-            </div>
-
-            <div id="education">
-                <h2 id="educationHeading">Education</h2>
-                <p id="educationDetails"></p>
-            </div>
-
-            <div id="experience">
-                <h2 id="experienceHeading">Experience</h2>
-                <p id="experienceDetails"></p>
-            </div>
-
-            <div id="skills">
-                <h2 id="skillsHeading">Skills</h2>
-                <p id="skillsList"></p>
-            </div>
+            <!-- Content for the generated resume will go here -->
         </section>
     </div>
     <script src="./script.js"></script>
