@@ -28,9 +28,9 @@ form.addEventListener("submit", (event: Event) => {
     const employer = (document.getElementById("employer") as HTMLInputElement)?.value;
     const location = (document.getElementById("location") as HTMLInputElement)?.value;
     const isRemote = (document.getElementById("remote") as HTMLInputElement)?.checked;
-    const startDate = (document.getElementById("start") as HTMLInputElement)?.value;
-    const endDateInput = (document.getElementById("end") as HTMLInputElement)?.value;
+    const years = (document.getElementById("years") as HTMLInputElement)?.value;
     const isCurrentlyWorking = (document.getElementById("work") as HTMLInputElement)?.checked;
+    const jobDescription = (document.getElementById("jobDescription") as HTMLInputElement)?.value;
 
     // Skills Information
     const skill = (document.getElementById("skill") as HTMLInputElement)?.value;
@@ -40,8 +40,8 @@ form.addEventListener("submit", (event: Event) => {
     const profilePicHTML = profilePictureFile ? `<img src="${URL.createObjectURL(profilePictureFile)}" alt="Profile Picture" id="profilePic">` : '';
 
     // Experience details handling
-    const endDate = isCurrentlyWorking ? "Present" : endDateInput;
     const remoteStatus = isRemote ? "Remote" : location;
+
 
     // Update the output container with formatted information
     form.style.display = 'none'; // Hide the form
@@ -52,39 +52,36 @@ form.addEventListener("submit", (event: Event) => {
             <div id="profilePic">${profilePicHTML}</div>
             <h2 id="personalInformationHeading">Personal Information</h2>
             <p id="personalInformation">
-                <strong>Name:</strong> ${firstName} ${lastName}<br>
-                <strong>Address:</strong> ${address}<br>
-                <strong>LinkedIn:</strong> <a href="${linkedin}" target="_blank">${linkedin}</a><br>
-                <strong>Phone No:</strong> ${tel}<br>
-                <strong>Email:</strong> ${email}
+                <strong>Name:</strong> <span id="editName" class="editable">${firstName} ${lastName}</span><br>
+                <strong>Address:</strong> <span id="editAddress" class="editable">${address}</span><br>
+                <strong>LinkedIn:</strong> <span id="editLinkedIn" class="editable"><a href="${linkedin}" target="_blank">${linkedin}</a></span><br>
+                <strong>Phone No:</strong> <span id="editTel" class="editable">${tel}</span><br>
+                <strong>Email:</strong> <span id="editEmail" class="editable">${email}</span>
             </p>
         </div>
 
         <div id="education">
             <h2 id="educationHeading">Education</h2>
             <p id="educationDetails">
-                <strong>School:</strong> ${school}, ${schoolLocation}<br>
-                <strong>Degree:</strong> ${degree}<br>
-                <strong>Field of Study:</strong> ${fieldOfStudy}<br>
-                <strong>Graduation Date:</strong> ${gradDate}
+                <strong><span id="editDegree" class="editable">${degree}</strong></span><br>    
+                <span id="editSchool" class="editable">${school}, ${schoolLocation}, ${fieldOfStudy} </span><br>
+                <span id="editGradDate" class="editable">${gradDate}</span>
             </p>
         </div>
 
         <div id="experience">
             <h2 id="experienceHeading">Experience</h2>
             <p id="experienceDetails">
-                <strong>Job Title:</strong> ${jobTitle}<br>
-                <strong>Employer:</strong> ${employer}<br>
-                <strong>Location:</strong> ${remoteStatus}<br>
-                <strong>Start Date:</strong> ${startDate}<br>
-                <strong>End Date:</strong> ${endDate}
+                <strong><span id="editJobTitle" class="editable">${jobTitle}</span></strong> <br>
+                <span id="editEmployer" class="editable">${employer}, ${remoteStatus}</span><br>
+                <span id="editJobDate" class="editable">${years}</span><br>
+                <span id="editJobDescription" class="editable">${jobDescription}</span><br>
             </p>
         </div>
 
         <div id="skills">
             <h2 id="skillsHeading">Skills</h2>
-            <p id="skillsList">${skill}</p>
+            <p id="skillsList"><span id="editSkill" class="editable">${skill}</span></p>
         </div>
     `;
-})
-
+});

@@ -28,9 +28,9 @@ form.addEventListener("submit", (event: Event) => {
     const employer = (document.getElementById("employer") as HTMLInputElement)?.value;
     const location = (document.getElementById("location") as HTMLInputElement)?.value;
     const isRemote = (document.getElementById("remote") as HTMLInputElement)?.checked;
-    const startDate = (document.getElementById("start") as HTMLInputElement)?.value;
-    const endDateInput = (document.getElementById("end") as HTMLInputElement)?.value;
+    const years = (document.getElementById("years") as HTMLInputElement)?.value;
     const isCurrentlyWorking = (document.getElementById("work") as HTMLInputElement)?.checked;
+    const jobDescription = (document.getElementById("jobDescription") as HTMLInputElement)?.value;
 
     // Skills Information
     const skill = (document.getElementById("skill") as HTMLInputElement)?.value;
@@ -40,7 +40,6 @@ form.addEventListener("submit", (event: Event) => {
     const profilePicHTML = profilePictureFile ? `<img src="${URL.createObjectURL(profilePictureFile)}" alt="Profile Picture" id="profilePic">` : '';
 
     // Experience details handling
-    const endDate = isCurrentlyWorking ? "Present" : endDateInput;
     const remoteStatus = isRemote ? "Remote" : location;
 
 
@@ -64,21 +63,19 @@ form.addEventListener("submit", (event: Event) => {
         <div id="education">
             <h2 id="educationHeading">Education</h2>
             <p id="educationDetails">
-                <strong>School:</strong> <span id="editSchool" class="editable">${school}, ${schoolLocation}</span><br>
-                <strong>Degree:</strong> <span id="editDegree" class="editable">${degree}</span><br>
-                <strong>Field of Study:</strong> <span id="editFieldOfStudy" class="editable">${fieldOfStudy}</span><br>
-                <strong>Graduation Date:</strong> <span id="editGradDate" class="editable">${gradDate}</span>
+                <strong><span id="editDegree" class="editable">${degree}</strong></span><br>    
+                <span id="editSchool" class="editable">${school}, ${schoolLocation}, ${fieldOfStudy} </span><br>
+                <span id="editGradDate" class="editable">${gradDate}</span>
             </p>
         </div>
 
         <div id="experience">
             <h2 id="experienceHeading">Experience</h2>
             <p id="experienceDetails">
-                <strong>Job Title:</strong> <span id="editJobTitle" class="editable">${jobTitle}</span><br>
-                <strong>Employer:</strong> <span id="editEmployer" class="editable">${employer}</span><br>
-                <strong>Location:</strong> <span id="editLocation" class="editable">${remoteStatus}</span><br>
-                <strong>Start Date:</strong> <span id="editStartDate" class="editable">${startDate}</span><br>
-                <strong>End Date:</strong> <span id="editEndDate" class="editable">${endDate}</span>
+                <strong><span id="editJobTitle" class="editable">${jobTitle}</span></strong> <br>
+                <span id="editEmployer" class="editable">${employer}, ${remoteStatus}</span><br>
+                <span id="editJobDate" class="editable">${years}</span><br>
+                <span id="editJobDescription" class="editable">${jobDescription}</span><br>
             </p>
         </div>
 
@@ -102,24 +99,27 @@ function makeEditable() {
             const currentElement = element as HTMLElement;
             const currentValue = currentElement.textContent || "";
 
-            // Create an input field for editing
-            const inputField = document.createElement('input');
-            inputField.type = 'text';
-            inputField.value = currentValue;
+            // Check if the current element is a <p> or <span>
+            if (currentElement.tagName === 'P' || currentElement.tagName === 'SPAN') {
+                // Create an input field
+                const inputField = document.createElement('input');
+                inputField.type = 'text';
+                inputField.value = currentValue;
 
-            // Save changes when the input loses focus
-            inputField.addEventListener('blur', () => {
-                currentElement.textContent = inputField.value; // Save the new value
-                currentElement.style.display = "inline"; // Restore visibility
-                inputField.remove(); // Remove the input field
-            });
+                // Add blur event to save changes when the input loses focus
+                inputField.addEventListener('blur', () => {
+                    currentElement.textContent = inputField.value; // Save the new value
+                    currentElement.style.display = "inline"; // Restore visibility
+                    inputField.remove(); // Remove the input field
+                });
 
-            // Hide the current element and insert the input field
-            currentElement.style.display = "none";
-            currentElement.parentNode?.insertBefore(inputField, currentElement);
+                // Hide the current element and insert the input field
+                currentElement.style.display = "none";
+                currentElement.parentNode?.insertBefore(inputField, currentElement);
 
-            // Automatically focus on the input field for editing
-            inputField.focus();
+                // Automatically focus on the input field for editing
+                inputField.focus();
+            }
         });
     });
 }

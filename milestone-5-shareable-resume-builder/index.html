@@ -8,12 +8,13 @@
 </head>
 <body>
     <div id="container">
+        <div id="buttonsContainer" class="top-buttons-container"></div>
         <!-- Forms Section -->
         <section id="formSection">
-            <h1>Shareable Resume Builder</h1>
-      <!-- Unified Resume Form -->
-      <form id="resumeForm">
-        <!-- Personal Information -->
+        <h1>Shareable Resume Builder</h1>
+        <!-- Resume Form -->
+        <form id="resumeForm">
+            <!-- Personal Information -->
             <h2>PERSONAL INFORMATION</h2>
             <label for="profilePicture">Profile Picture</label>
             <input type="file" id="profilePicture" accept="image/*" required>
@@ -61,8 +62,8 @@
             <input type="text" id="other">
             <label for="study">Field of Study</label>
             <input type="text" id="study" required>
-            <label for="grad">Graduation Date (Or Expected Graduation Date)</label>
-            <input type="date" id="grad" required>
+            <label for="grad">Education Years</label>
+            <input type="text" id="grad" required>
 
 
         <!-- Experience -->
@@ -77,16 +78,10 @@
                 <input type="checkbox" id="remote">
                 Remote
             </label><br><br>
-            <label for="start">Start Date</label>
-            <input type="date" id="start" required>
-            <label for="end">End Date</label>
-            <input type="date" id="end">
-            <label for="work">
-                <input type="checkbox" id="work">
-                I currently work here
-            </label>
-
-
+            <label for="years">Years Worked</label>
+            <input type="text" id="years" required>
+            <label for="jobDescription">Job Description</label>
+            <textarea id="jobDescription" rows="4" placeholder="Describe your responsibilities and achievements..."></textarea>
         <!-- Skills -->
             <h2>SKILLS</h2>
             <label for="skill">Skills</label>

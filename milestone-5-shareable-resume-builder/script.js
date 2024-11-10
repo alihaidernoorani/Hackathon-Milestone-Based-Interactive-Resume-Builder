@@ -35,16 +35,15 @@ form.addEventListener("submit", (event) => {
     const employer = (_g = document.getElementById("employer")) === null || _g === void 0 ? void 0 : _g.value;
     const location = (_h = document.getElementById("location")) === null || _h === void 0 ? void 0 : _h.value;
     const isRemote = (_j = document.getElementById("remote")) === null || _j === void 0 ? void 0 : _j.checked;
-    const startDate = (_k = document.getElementById("start")) === null || _k === void 0 ? void 0 : _k.value;
-    const endDateInput = (_l = document.getElementById("end")) === null || _l === void 0 ? void 0 : _l.value;
-    const isCurrentlyWorking = (_m = document.getElementById("work")) === null || _m === void 0 ? void 0 : _m.checked;
+    const years = (_k = document.getElementById("years")) === null || _k === void 0 ? void 0 : _k.value;
+    const isCurrentlyWorking = (_l = document.getElementById("work")) === null || _l === void 0 ? void 0 : _l.checked;
+    const jobDescription = (_m = document.getElementById("jobDescription")) === null || _m === void 0 ? void 0 : _m.value;
     // Skills Information
     const skill = (_o = document.getElementById("skill")) === null || _o === void 0 ? void 0 : _o.value;
     // Profile picture processing
     const profilePictureFile = (_p = profilePicture.files) === null || _p === void 0 ? void 0 : _p[0];
     const profilePicHTML = profilePictureFile ? `<img src="${URL.createObjectURL(profilePictureFile)}" alt="Profile Picture" id="profilePic">` : '';
     // Experience details handling
-    const endDate = isCurrentlyWorking ? "Present" : endDateInput;
     const remoteStatus = isRemote ? "Remote" : location;
     // Update the output container with formatted information
     form.style.display = 'none'; // Hide the form
@@ -65,21 +64,19 @@ form.addEventListener("submit", (event) => {
         <div id="education">
             <h2 id="educationHeading">Education</h2>
             <p id="educationDetails">
-                <strong>School:</strong> <span id="editSchool" class="editable">${school}, ${schoolLocation}</span><br>
-                <strong>Degree:</strong> <span id="editDegree" class="editable">${degree}</span><br>
-                <strong>Field of Study:</strong> <span id="editFieldOfStudy" class="editable">${fieldOfStudy}</span><br>
-                <strong>Graduation Date:</strong> <span id="editGradDate" class="editable">${gradDate}</span>
+                <strong><span id="editDegree" class="editable">${degree}</strong></span><br>    
+                <span id="editSchool" class="editable">${school}, ${schoolLocation}, ${fieldOfStudy} </span><br>
+                <span id="editGradDate" class="editable">${gradDate}</span>
             </p>
         </div>
 
         <div id="experience">
             <h2 id="experienceHeading">Experience</h2>
             <p id="experienceDetails">
-                <strong>Job Title:</strong> <span id="editJobTitle" class="editable">${jobTitle}</span><br>
-                <strong>Employer:</strong> <span id="editEmployer" class="editable">${employer}</span><br>
-                <strong>Location:</strong> <span id="editLocation" class="editable">${remoteStatus}</span><br>
-                <strong>Start Date:</strong> <span id="editStartDate" class="editable">${startDate}</span><br>
-                <strong>End Date:</strong> <span id="editEndDate" class="editable">${endDate}</span>
+                <strong><span id="editJobTitle" class="editable">${jobTitle}</span></strong> <br>
+                <span id="editEmployer" class="editable">${employer}, ${remoteStatus}</span><br>
+                <span id="editJobDate" class="editable">${years}</span><br>
+                <span id="editJobDescription" class="editable">${jobDescription}</span><br>
             </p>
         </div>
 

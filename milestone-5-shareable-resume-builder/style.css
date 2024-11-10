@@ -1,4 +1,3 @@
-/* Reset body margins and apply a background */
 body {
     margin: 0;
     padding: 20px;
@@ -56,6 +55,7 @@ input[type="file"] {
     margin-bottom: 45px;
 }
 
+textarea, 
 input[type="text"],
 input[type="url"],
 input[type="email"],
@@ -66,12 +66,12 @@ select {
     padding: 10px;
     margin-bottom: 45px;
     box-sizing: border-box;
-    border-top: none;
-    border-right: none;
-    border-left: none;
-    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    transition: border-color 0.3s;
 }
 
+textarea:focus,
 input[type="text"]:focus,
 input[type="url"]:focus,
 input[type="email"]:focus,
@@ -131,17 +131,26 @@ button:hover {
     display: none;
 }
 
-#buttonsContainer {
+.top-buttons-container {
     display: flex;
     justify-content: center;
-    margin-top: 10px;
-    gap: 45px;
+    gap: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
 }
 
-#buttonsContainer button {
-font-weight: bold;
-background-color: #007bff;
-color: white;
-padding: 15px;
-margin-bottom: 25px;
+.top-buttons-container button {
+    font-weight: bold;
+    background-color: #007bff;
+    color: white;
+    width: auto;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.top-buttons-container button:hover {
+    background-color: #0056b3;
 }

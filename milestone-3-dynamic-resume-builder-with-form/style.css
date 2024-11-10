@@ -1,4 +1,3 @@
-/* Reset body margins and apply a background */
 body {
     margin: 0;
     padding: 20px;
@@ -56,6 +55,7 @@ input[type="file"] {
     margin-bottom: 45px;
 }
 
+textarea, 
 input[type="text"],
 input[type="url"],
 input[type="email"],
@@ -66,12 +66,12 @@ select {
     padding: 10px;
     margin-bottom: 45px;
     box-sizing: border-box;
-    border-top: none;
-    border-right: none;
-    border-left: none;
-    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    transition: border-color 0.3s;
 }
 
+textarea:focus,
 input[type="text"]:focus,
 input[type="url"]:focus,
 input[type="email"]:focus,
